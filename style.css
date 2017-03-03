@@ -46,27 +46,15 @@ h1, h2, h3, h4, h5, h6, header, footer, span, a, p, article {
 header, footer, span, a, p, article {
 	font-size: 20px;
 }
+body {
+	background-color: #f0f0f0;
+}
 /* header */
 .menu_normal {
 	padding: 15px 10px 0 10px;
-	/*height: 100px;*/
-	position: absolute;
     width: 100%;
     top: 0;
     z-index: 1;
-}
-.menu_normal_white {
-	position: absolute;
-	background-position: center;
-	top: 0;
-	width: 100%;
-}
-.menu_normal .blogTitle {
-	width: 24px;
-	height: 16px;
-	background: url(image/buttonsx2.png) no-repeat 0 0;
-	background-size: 70px 200px;
-	float: left;
 }
 .menu_normal .menubtn {
 	width: 20px;
@@ -74,111 +62,18 @@ header, footer, span, a, p, article {
     background: url(image/buttonsx2.png) no-repeat 0 -20px;
     background-size: 70px 200px;
     float: right;
+    right: 32px;
 }
 .menu_open {
-	padding: 15px 10px 0 10px;
-	position: absolute;
-	top: 0;
-	width: 100%;
-	height: 100%;
-	display: none;
-	z-index: 10;
-}
-.menu_background_color {
-	width: 100%;
-	height: 100%;
-	position: absolute;
-    background-color: #000;
-    opacity: 0.92;
-    top: 0;
-    left: 0;
-    z-index: 5;
-}
-.menu_open .blogTitle {
-	width: 24px;
-	height: 15px;
-	background: url(image/buttonsx2.png) no-repeat -35px 0;
-	background-size: 70px 200px;
-	display: inline-block;
-}
-.menu_open .menubtn {
-	width: 24px;
-	height: 18px;
-	background: url(image/buttonsx2.png) no-repeat -31px -21px;
-	background-size: 70px 200px;
-	display: block;
-	float: right;
-}
-.menu_normal .blogTitle_content {
-	width: 24px;
-	height: 16px;
-	background: url(image/buttonsx2.png) no-repeat -35px 0;
-	background-size: 70px 200px;
-	float: left;
-}
-.menu_normal .menubtn_content {
-	width: 20px;
-    height: 20px;
-    background: url(image/buttonsx2.png) no-repeat 0 -155px;
-    background-size: 70px 200px;
-    float: right;
-}
-.menu {
-	display: block;
-	margin-top: 40px;
-}
-.top_menu a {
-	color: #fff;
-	font-size: 44px;
-	font-weight: 700;
-}
-.menu_open > a {
-	font-size: 0;
-}
-.menu ul li {
-	display: inline;
-	padding-right: 60px;
-}
-.top_menu {
-	margin-top: 36px;
-}
-.top_menu .widgettitle {
-	color: #777;
-	font-size: 10px;
-	display: none;
-}
-.top_menu ul li {
-	display: inline-block;
-	padding-right: 52px;
-	padding-bottom: 32px;
-    margin-left: 30px;
 }
 /* footer */
 #footer {
 	margin-top: 72px;
 	padding-bottom: 60px;
 }
-.twitterbtn {
-	width: 21px;
-	height: 19px;
-	background: url(image/buttonsx2.png) no-repeat 0 -78px;
-	background-size: 70px 200px;
-	float: left;
-	margin-left: 10px;
-	margin-top: 4px;
-}
-.facebookbtn {
-	width: 13px;
-	height: 20px;
-	background: url(image/buttonsx2.png) no-repeat 0 -105px;
-	background-size: 70px 200px;
-	float: left;
-	margin-left: 24px;
-	margin-top: 4px;
-}
 .copyright {
 	float: left;
-	margin-left: 40px;
+	margin-left: 20px;
 	line-height: 1.6;
     font-size: 10px;
     display: block;
@@ -196,22 +91,30 @@ header, footer, span, a, p, article {
 
 /* contents */
 #index_content {
-	padding-top: 72px;
+	margin-top: 60px;
 }
 .home_article{
 	margin-bottom: 38px;
+	transition-duration: 0.5s;
 }
-.index_article_thumb {
-	background-repeat: no-repeat;
+.index_article_cover {
 	width: 100%;
 	height: 0;
-	background-position:center center;
-	background-size: cover;
-	background-color: #eee;
-	margin-bottom: 10px;
 	padding-bottom: 45%;
+	overflow: hidden;
+	background-color: #ccc;
 }
-/**/
+.index_article_image {
+	width: 100%;
+	display: block;
+}
+/* article information */
+.index_article_info_frame {
+	width: 100%;
+	height: 80px;
+	background-color: #fff;
+	padding-top: 10px;
+}
 .index_article_title {
 	display: block;
 	font-size: 22px;
@@ -230,12 +133,40 @@ header, footer, span, a, p, article {
 	display: inline-block;
 	color: #666;
 }
-#wp-load-more-btn {
-	width: 28px;
-	height: 28px;
-	background: url(image/buttonsx2.png) no-repeat 0 -43px;
-	background-size: 70px 200px;
-	border: 0 solid #000;
-	display: block;
-	margin: auto;
+
+@media (min-width: 1024px) and (min-height: 670px) {
+	html {
+		height: 100%;
+	}
+	#container {
+		width: 960px;
+		margin: auto;
+	    display: table;
+	}
+	#index_content {
+		font-size: 0px;
+		position: relative;
+		height: 1000px;
+	}
+	.home_article {
+		width: 320px;
+		display: inline-block;
+		padding: 0 14px 20px;
+		margin: 0;
+		position: absolute;
+	}
+	.index_article_title {
+		font-size: 20px;
+	}
+	.index_article_cover {
+		width: 100%;
+		height: 100%;
+		padding-bottom: 0;
+		background-color: #ccc;
+	}
+}
+@media (min-width: 1600px) and (min-height: 670px) {
+	#container {
+		width: 1280px;
+	}
 }
