@@ -31,6 +31,8 @@
 		url("./fonts/ProximaNova-Bold.woff") format("woff"),/* Pretty Modern Browsers */
 		url("./fonts/ProximaNova-Bold.otf") format("opentype");/* Safari, Android, iOS */
 }
+
+
 * {
 	padding: 0; margin: 0;
 	-webkit-box-sizing: border-box;
