@@ -16,6 +16,7 @@
 		<?php endwhile; else: ?>
 			<h2>Sorry!</h2>
 		<?php endif; ?>
+
 	</div><!-- single_content -->
     <div class="bottom_nev">
         <div class="bottom_next">
