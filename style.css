@@ -1,26 +1,12 @@
 @font-face {
   font-family: "Noto Sans";
-  font-weight: 100;
-  src: url("./fonts/NotoSansCJKkr-Light-2350.woff") format("woff");
-}
-@font-face {
-  font-family: "Noto Sans";
-  font-weight: 200;
+  font-weight: 300;
   src: url("./fonts/NotoSansCJKkr-Regular-2350.woff") format("woff");
 }
 @font-face {
   font-family: "Noto Sans";
-  font-weight: 300;
+  font-weight: 500;
   src: url("./fonts/NotoSansCJKkr-Medium-2350.woff") format("woff");
-}
-@font-face {
-	font-family: "Proxima Nova";
-	font-weight: 100;
-	src: url("./fonts/ProximaNova-Thin.eot");/* IE9 Compat Modes */
-	src: url("./fonts/ProximaNova-Thin.eot?#iefix") format("embedded-opentype"),/* IE6-IE8 */
-		url("./fonts/ProximaNova-Thin.woff2") format("woff2"),/* Super Modern Browser */
-		url("./fonts/ProximaNova-Thin.woff") format("woff"),/* Pretty Modern Browsers */
-		url("./fonts/ProximaNova-Thin.otf") format("opentype");/* Safari, Android, iOS */
 }
 @font-face {
 	font-family: "Proxima Nova";
@@ -46,29 +32,22 @@
 	-webkit-box-sizing: border-box;
 	-moz-box-sizing: border-box;
 	box-sizing: border-box;
-/*	-webkit-font-smoothing: antialiased;
-	font-smoothing: antialiased;*/
 }
 html, body {
 	height: 100%;
 }
 
 /* grobal */
-a, a:link, a:visited {
+a, a:link, a:visited, a:hover {
 	text-decoration: none;
 	color: #000;
-}
-a:hover {
-	text-decoration: underline;
-    -moz-text-decoration-color: red;
-    text-decoration-color: red;
 }
 ul {
 	list-style-type: none;
 }
 h1, h2, h3, h4, h5, h6, header, footer, span, a, p, article {
 	font-family: "Noto Sans", "Proxima Nova", Arial, sans-serif;
-	font-weight: 200;
+	font-weight: 300;
 	font-style: normal;
 	word-break: break-all;
 }
@@ -79,6 +58,9 @@ body {
 	background-color: #f0f0f0;
 }
 /* header */
+#header {
+    height: 38px;
+}
 .topMenu {
 	width: 100%;
 	line-height: 0.8;
@@ -90,9 +72,8 @@ body {
 	margin: 16px 0 0 16px;
 	font-family: "Proxima Nova";
 	font-weight: 500;
-}
-.topTitle.off {
-	display: none;
+	opacity: 1.0;
+	transition: all 0.5s ease;
 }
 .more_btn {
 	float: right;
@@ -115,7 +96,7 @@ body {
 	border-radius: 6px;
 	position: absolute;
 	display: inline-block;
-	transition-duration: 0.5s;
+	transition: all 0.5s ease;
 }
 .more_btn .circle0 {
 	left: 0;
@@ -135,30 +116,42 @@ body {
 	transition-duration: 0.1s;
 }
 .more_btn.on .circle1 {
-	left: 0;
-	width: 30px;
+	left: 1px;
+	width: 28px;
 	height: 4px;
 	transform: rotate(225deg);
 }
 .more_btn.on .circle2 {
-	left: 0;
-	width: 30px;
+	left: 1px;
+	width: 28px;
 	height: 4px;
 	visibility: visible;
 	transform: rotate(315deg);
 }
+.topTitle.off {
+	visibility: hidden;
+	opacity: 0.0;
+	margin-top: 48px;
+}
 .more_menu {
-	display: none;
+	position: absolute;
+	visibility: hidden;
+	top: -16px;
+	left: 16px;
+	opacity: 0.0;
+	transition: all 0.5s ease;
 }
 .more_menu.on {
-	display: inline-block;
-	margin: 16px 0 0 16px;
+	visibility: visible;
+	opacity: 1.0;
+	top: 16px;
 }
 .topMenu .more_menu a {
 	color: #000;
 }
 .single_topMenu .more_menu a {
 	color: #fff;
+	margin-bottom: 16px;
 }
 .more_menu .txt_menu {
 	font-size: 28px;
@@ -233,7 +226,7 @@ body {
 	margin: 0 16px;
 	display: block;
 	padding: 36px 0;
-	font-size: 28px;
+	font-size: 26px;
 	font-family: "Proxima Nova";
 	font-weight: 300;
 }
@@ -280,7 +273,7 @@ body {
 /* single context */
 .single_article_content p {
 	font-family: "Noto Sans", Arial, sans-serif;
-	font-weight: 200;
+	font-weight: 300;
 	font-size: 15px;
 	line-height: 1.75;
 	letter-spacing: -0.5px;
@@ -289,8 +282,8 @@ body {
 }
 .single_article_content h4 {
 	font-family: "Proxima Nova", Arial, sans-serif;
-	font-weight: 500;
-	font-size: 19px;
+	font-weight: 300;
+	font-size: 22px;
 	margin: 0 16px;
 	padding-bottom: 8px;
 }

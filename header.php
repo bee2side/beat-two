@@ -16,16 +16,16 @@
 		<div id="container">
 			<div id="header">
 				<div class="topMenu">
-					<a class="topTitle" href="<?php echo home_url(); ?>"><?php bloginfo('name'); ?></a>
-					<label class="more_menu">
-						<a href="<?php echo home_url(); ?>"><span class="txt_menu">Featured</span></a>
-						<a href="<?php echo home_url(); ?>"><span class="txt_menu">About</span></a>
-					</label>
 					<label class="more_btn">
 							<span class="circle0"></span>
 							<span class="circle1"></span>
 							<span class="circle2"></span>
 							<span class="circle3"></span>
+					</label>
+					<a class="topTitle" href="<?php echo home_url(); ?>"><?php bloginfo('name'); ?></a>
+					<label class="more_menu">
+						<a href="<?php echo home_url(); ?>"><span class="txt_menu">Featured</span></a>
+						<a href="<?php echo home_url(); ?>"><span class="txt_menu">About</span></a>
 					</label>
 				</div><!-- topMenu -->
 			</div>
