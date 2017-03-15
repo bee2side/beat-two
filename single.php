@@ -19,22 +19,28 @@
 
 	</div><!-- single_content -->
     <div class="bottom_nev">
-        <div class="bottom_next">
-            <?php $nextPost = get_next_post(true);
-        	if($nextPost) { ?>
-			<?php $nextthumbnail = wp_get_attachment_image_src( get_post_thumbnail_id($nextPost->ID), 'full' ); ?>
-			<div class="bottom_next_thumb" style="background-image: url('<?php echo $nextthumbnail['0']; ?>')">
+    	<?php $next = get_permalink(get_adjacent_post(false,'',false)); ?>
+		<a href="<?php echo $next; ?>">
+			<div class="bottom_next">
+				<?php $nextPost = get_next_post(true);
+				if($nextPost) { ?>
+				<?php $nextthumbnail = wp_get_attachment_image_src( get_post_thumbnail_id($nextPost->ID), 'full' ); ?>
+					<div class="bottom_next_thumb" style="background-image: url('<?php echo $nextthumbnail['0']; ?>')">
+					</div>
+				<p class="bottom_next_txt"><?php echo $nextPost->post_title; } ?></p>
 			</div>
-            <?php next_post_link('%link', "%title", true);} ?>
-        </div>
-        <div class="bottom_prev">
-            <?php $prevPost = get_previous_post(true);
-        	if($prevPost) { ?>
-			<?php $prevthumbnail = wp_get_attachment_image_src( get_post_thumbnail_id($prevPost->ID), 'full' ); ?>
-			<div class="bottom_prev_thumb" style="background-image: url('<?php echo $prevthumbnail['0']; ?>')">
+        </a>
+    	<?php $prev = get_permalink(get_adjacent_post(false,'',true)); ?>
+		<a href="<?php echo $prev; ?>">
+			<div class="bottom_prev">
+				<?php $prevPost = get_previous_post(true);
+				if($prevPost) { ?>
+				<?php $prevthumbnail = wp_get_attachment_image_src( get_post_thumbnail_id($prevPost->ID), 'full' ); ?>
+					<div class="bottom_prev_thumb" style="background-image: url('<?php echo $prevthumbnail['0']; ?>')">
+					</div>
+				<p class="bottom_prev_txt"><?php echo $prevPost->post_title; } ?></p>
 			</div>
-			<?php previous_post_link('%link', "%title", true);} ?>
-        </div>
-    </div><!-- bottom_nev -->
+        </a>
+	</div><!-- bottom_nev -->
 </div><!-- single_main -->
 <?php get_footer(); ?>
